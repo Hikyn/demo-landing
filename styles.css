@@ -1,0 +1,23 @@
+html {
+  scroll-behavior: smooth;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+html ul,
+html li {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+html hr {
+  margin: 0em;
+  border-width: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*# sourceMappingURL=styles.css.map */
