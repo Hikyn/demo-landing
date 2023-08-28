@@ -1,18 +1,18 @@
 html {
-  scroll-behavior: smooth;
+  background: #001A33;
   font-family: Helvetica, sans-serif;
   min-height: 100vh;
-  background: #001A33;
+  scroll-behavior: smooth;
 }
 html ul,
 html li {
+  list-style-type: none;
   margin-left: 0;
   padding-left: 0;
-  list-style-type: none;
 }
 html hr {
-  margin: 0em;
   border-width: 0px;
+  margin: 0em;
 }
 
 *,
@@ -22,10 +22,10 @@ html hr {
 }
 
 a {
+  color: #F0F7FF;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  color: #F0F7FF;
   text-decoration: none;
 }
 a:visited {
@@ -36,42 +36,44 @@ a.link--uppercase {
 }
 
 body {
+  align-content: space-between;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
   height: 100%;
+  margin: 0;
 }
 
 .block--fullscreen {
+  align-content: space-between;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
   height: 100vh;
 }
 
 header {
   display: flex;
-  padding: 1.5rem;
   flex: 0 1 auto;
+  padding: 1.5rem;
 }
 header .block--left {
   flex: 1 0 0;
 }
 header .block--right {
-  display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  flex: 1 0 0;
-}
-header .block--right .menu {
   display: flex;
-  justify-content: flex-start;
-  gap: 1.5rem;
+  flex: 1 0 0;
+  justify-content: space-between;
 }
+header .block--right .menu,
 header .block--right .info {
   display: flex;
-  justify-content: flex-end;
   gap: 1.5rem;
+}
+header .block--right .menu {
+  justify-content: flex-start;
+}
+header .block--right .info {
+  justify-content: flex-end;
 }
 header a:hover {
   color: #FFB2C7;
@@ -79,41 +81,41 @@ header a:hover {
 }
 
 main {
-  background-image: url("images/greece.jpg");
   background-blend-mode: screen, normal;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("images/greece.jpg");
   background-position: 5rem;
-  margin-left: 3rem;
-  height: inherit;
-  flex: 1 1 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
+  height: inherit;
   justify-content: center;
+  margin-left: 3rem;
 }
 main button {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  padding: 1rem 1.5rem;
   align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  border: none;
-  border-radius: 1rem;
   background-color: #FFB2C7;
+  border-radius: 1rem;
+  border: none;
+  display: flex;
+  font-size: 1.25rem;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 1.5rem;
   text-decoration: none;
+  width: max-content;
 }
 main button img {
   height: 1.25rem;
 }
 main h1.title {
-  margin: 4rem 0;
   color: black;
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: -0.12rem;
   line-height: 6rem;
+  margin: 4rem 0;
 }
 main h1.title .top,
 main h1.title .bottom {
@@ -123,80 +125,84 @@ main h1.title .bottom {
   margin-bottom: 0.5rem;
 }
 main h1.title .top .title--cubic,
+main h1.title .top .title--round,
+main h1.title .bottom .title--cubic,
+main h1.title .bottom .title--round {
+  background-color: white;
+}
+main h1.title .top .title--cubic,
 main h1.title .bottom .title--cubic {
   padding: 0 1rem;
-  background-color: white;
 }
 main h1.title .top .title--round,
 main h1.title .bottom .title--round {
-  padding: 0 2.5rem;
-  background-color: white;
   border-radius: 3.75rem;
+  padding: 0 2.5rem;
 }
 main .block--description {
   margin: 1rem 0rem;
 }
 main .block--description h2.description {
-  margin: 0;
-  padding-right: 0.3rem;
-  color: #F0F7FF;
   background-color: #001A33;
+  color: #F0F7FF;
   font-size: 1rem;
   font-weight: 400;
-  width: max-content;
   line-height: 1.5rem;
+  margin: 0;
+  padding-right: 0.3rem;
+  width: max-content;
 }
 
 footer {
-  height: auto;
-  margin: 3rem;
   display: flex;
   flex-direction: column;
+  height: auto;
   justify-content: space-around;
+  margin: 3rem;
 }
 footer .footer--top {
   color: #F0F7FF;
   font-size: 4rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 4rem;
-  letter-spacing: -0.08rem;
   height: 12rem;
+  letter-spacing: -0.08rem;
+  line-height: 4rem;
   margin-right: 50vw;
 }
 footer .footer--bottom {
+  align-self: stretch;
   display: flex;
   gap: 0.75rem;
-  align-self: stretch;
   height: 7rem;
 }
 footer .footer--bottom button {
+  align-items: flex-end;
   background-color: #FFB2C7;
   border: none;
-  text-decoration: none;
-  padding: 0;
-  flex: 1 1 0;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex: 1 1 0;
   gap: 3rem;
+  justify-content: space-between;
+  padding: 0;
+  text-decoration: none;
 }
 footer .footer--bottom button div {
-  padding: 0.75rem;
   color: black;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: 2rem;
+  padding: 0.75rem;
 }
 footer .footer--bottom button .flex-end {
-  display: flex;
-  justify-content: flex-end;
-  border-radius: 0.75rem 0rem 0rem 0rem;
   background-color: #001A33;
+  border-radius: 0.75rem 0rem 0rem 0rem;
+  display: flex;
   flex: 1 0 0;
-  padding: 0.75rem;
   height: 1.5rem;
+  justify-content: flex-end;
+  padding: 0.75rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
