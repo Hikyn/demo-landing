@@ -1,0 +1,360 @@
+$background-color: #001A33;
+$background-color-transparent: #001a3399;
+$button-color: #FFB2C7;
+$button-color-hover: #d7879d;
+$text-color-on-dark-bg: #F0F7FF;
+
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+html {
+    background: $background-color;
+    font-family: Helvetica, sans-serif;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    ul,
+    li {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    hr {
+        border-width: 0px;
+        margin: 0em;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    align-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+.block--fullscreen {
+    align-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    flex: 0 1 auto;
+    padding: 1.5rem;
+    gap: 1rem;
+
+    @media (min-width: $mediaBp1Width) {
+        display: flex;
+        flex-direction: row;
+      }
+    
+    @media (max-width: $mediaBp1Width) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        color: $text-color-on-dark-bg;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        text-decoration: none;
+        @media (max-width: $mediaBp1Width) {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    
+        &:visited {
+            text-decoration: none;
+        }
+        &.link--uppercase {
+            text-transform: uppercase;
+        }
+    }
+
+    .block--left {
+        flex: 1 0 0;
+    }
+
+    .block--right {
+        align-items: flex-start;
+        display: flex;
+        flex: 1 0 0;
+        justify-content: space-between;
+        gap: 1rem;
+
+        @media (max-width: $mediaBp1Width) {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu,
+        .info {
+            display: flex;
+            gap: 1.5rem;
+            @media (max-width: $mediaBp1Width) {
+                gap: 0.3rem;
+            }
+            
+        }
+
+        .menu {
+            justify-content: flex-start;
+        }
+
+        .info {
+            justify-content: flex-end;
+        }
+    }
+
+    a:hover {
+        color: $button-color;
+        transition: 0.1s all ease-in;
+    }
+}
+
+main {
+    animation-duration: 2s;
+    animation-name: slidein;
+    @keyframes slidein {
+        from {
+          margin-top: 60%;
+        }
+      
+        to {
+          margin-top: 0%;
+        }
+      }
+    background-blend-mode: screen, normal;
+    background-image: url('images/greece.png');
+    background-position: 5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: inherit;
+    justify-content: center;
+    margin-left: 3rem;
+    transition-timing-function: ease;
+    @media (max-width: $mediaBp1Width) {
+        background-position: 0rem;
+        border-radius: 1rem;
+        margin-left: 0rem;
+        align-items: center;
+    }
+
+    button {
+        align-items: center;
+        background-color: $button-color;
+        border-radius: 1rem;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        font-size: 1.25rem;
+        gap: 1.5rem;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        transition: 0.1s all ease-in;
+        width: max-content;
+
+        &:hover {
+            gap: 2rem;
+            background-color: $button-color-hover;
+        }
+
+        img {
+            height: 1.25rem;
+        }
+    }
+
+    h1.title {
+        animation-duration: 7s;
+        animation-name: slidein-left;
+
+        @media (max-width: $mediaBp1Width) {
+            animation-duration: 0s;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.12rem;
+            line-height: 2rem;
+            margin: 1rem 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        @keyframes slidein-left {
+            from {
+            margin-left: 30%;
+            }
+        
+            to {
+            margin-left: 0%;
+            }
+        }
+        color: black;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: -0.12rem;
+        line-height: 6rem;
+        margin: 4rem 0;
+
+        .top,
+        .bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 1.25rem;
+            margin-bottom: 0.5rem;
+            @media (max-width: $mediaBp1Width) {
+                gap: 0.3rem;
+            }
+            .title--cubic,
+            .title--round {
+                background-color: white;
+            }
+
+            .title--cubic {
+                padding: 0 1rem;
+            }
+
+            .title--round {
+                border-radius: 3.75rem;
+                padding: 0 2.5rem;
+            }
+        }
+    }
+    .block--description {
+        margin: 1rem 0rem;
+        @media (max-width: $mediaBp1Width) {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 1rem;
+            margin-top: 6rem;
+        }
+
+        h2.description {
+            background-color: $background-color;
+            color: $text-color-on-dark-bg;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+            margin: 0;
+            padding-right: 0.3rem;
+            width: max-content;
+            @media (max-width: $mediaBp1Width) {
+                display: inline;
+                width: 100%;
+                padding: 0.1rem 0.1rem;
+                background-color: $background-color;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    margin: 3rem;
+    @media (max-width: $mediaBp1Width) {
+        margin: 2rem;
+    }
+
+    .footer--top {
+        color: $text-color-on-dark-bg;
+        font-size: 4rem;
+        font-style: normal;
+        font-weight: 400;
+        height: 12rem;
+        letter-spacing: -0.08rem;
+        line-height: 4rem;
+        margin-right: 50vw;
+        @media (max-width: $mediaBp1Width) {
+            margin: 2rem 0;
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+    }
+
+    .footer--bottom {
+        align-self: stretch;
+        display: flex;
+        gap: 0.75rem;
+        height: 7rem;
+        @media (max-width: $mediaBp1Width) {
+            flex-direction: column;
+        }
+
+        button {
+            align-items: flex-end;
+            background-color: $button-color;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex: 1 1 0;
+            gap: 3rem;
+            justify-content: space-between;
+            padding: 0;
+            text-decoration: none;
+            transition: 0.1s all ease-in;
+            @media (max-width: $mediaBp1Width) {
+                gap: 0rem;
+            }
+
+            &:hover {
+                border-radius: 1rem;
+                background-color: $button-color-hover;
+            }
+
+            &:hover > .flex-end {
+                background-color: #000f1d;
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+
+            div {
+                color: black;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 2rem;
+                padding: 0.75rem 5rem 0.75rem 0.75rem;
+                @media (max-width: $mediaBp1Width) {
+                    height: 6rem;
+                }
+            }
+
+            .flex-end {
+                background-color: $background-color;
+                border-radius: 0.75rem 0rem 0rem 0rem;
+                display: flex;
+                flex: 1 0 0;
+                height: 1.5rem;
+                justify-content: flex-end;
+                padding: 0.75rem;
+                transition: 0.1s all ease-in;
+                @media (max-width: $mediaBp1Width) {
+                    flex: 0;
+                }
+                svg {
+                    transition: 0.1s all ease-in;
+                }
+            }
+        }
+    }
+}
