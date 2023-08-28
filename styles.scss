@@ -1,5 +1,6 @@
 $background-color: #001A33;
 $button-color: #FFB2C7;
+$button-color-hover: #d7879d;
 $text-color-on-dark-bg: #F0F7FF;
 
 
@@ -94,6 +95,17 @@ header {
 }
 
 main {
+    animation-duration: 2s;
+    animation-name: slidein;
+    @keyframes slidein {
+        from {
+          margin-top: 60%;
+        }
+      
+        to {
+          margin-top: 0%;
+        }
+      }
     background-blend-mode: screen, normal;
     background-image: url('images/greece.png');
     background-position: 5rem;
@@ -105,19 +117,27 @@ main {
     height: inherit;
     justify-content: center;
     margin-left: 3rem;
+    transition-timing-function: ease;
 
     button {
         align-items: center;
         background-color: $button-color;
         border-radius: 1rem;
         border: none;
+        cursor: pointer;
         display: flex;
         font-size: 1.25rem;
         gap: 1.5rem;
         justify-content: center;
         padding: 1rem 1.5rem;
         text-decoration: none;
+        transition: 0.1s all ease-in;
         width: max-content;
+
+        &:hover {
+            gap: 2rem;
+            background-color: $button-color-hover;
+        }
 
         img {
             height: 1.25rem;
@@ -125,6 +145,17 @@ main {
     }
 
     h1.title {
+        animation-duration: 7s;
+        animation-name: slidein-left;
+        @keyframes slidein-left {
+            from {
+            margin-left: 30%;
+            }
+        
+            to {
+            margin-left: 0%;
+            }
+        }
         color: black;
         font-size: 6rem;
         font-weight: 400;
@@ -198,12 +229,26 @@ footer {
             align-items: flex-end;
             background-color: $button-color;
             border: none;
+            cursor: pointer;
             display: flex;
             flex: 1 1 0;
             gap: 3rem;
             justify-content: space-between;
             padding: 0;
             text-decoration: none;
+            transition: 0.1s all ease-in;
+
+            &:hover {
+                border-radius: 1rem;
+                background-color: $button-color-hover;
+            }
+
+            &:hover > .flex-end {
+                background-color: #000f1d;
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
 
             div {
                 color: black;
@@ -222,6 +267,11 @@ footer {
                 height: 1.5rem;
                 justify-content: flex-end;
                 padding: 0.75rem;
+                transition: 0.1s all ease-in;
+
+                svg {
+                    transition: 0.1s all ease-in;
+                }
             }
         }
     }
