@@ -41,9 +41,24 @@ a {
     }
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100%;
+}
+
+.block--fullscreen {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100vh;
+}
+
 header {
     display: flex;
     padding: 1.5rem; 
+    flex: 0 1 auto;
 
     .block--left {
         flex: 1 0 0;
@@ -72,4 +87,73 @@ header {
         color: $button-color;
         transition: 0.1s all ease-in;
     }
+}
+
+main {
+    background-image: url('images/greece.jpg');
+    background-blend-mode: screen, normal; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 5rem;
+
+    margin-left: 3rem;
+    height: inherit;
+
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    h1.title {
+        margin: 4rem 0;
+        color: black;
+
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: -0.12rem; 
+        line-height: 6rem;;
+
+        .top,
+        .bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 1.25rem;
+            margin-bottom: 0.5rem;
+            
+
+            .title--cubic {
+                padding: 0 1rem;
+
+                background-color: white;
+            }
+
+            .title--round {
+                padding: 0 2.5rem;
+
+                background-color: white;
+
+                border-radius: 3.75rem;
+            }
+        }
+    }
+    .block--description {
+        margin: 1rem 0rem;
+        h2.description {
+            margin: 0;
+            padding-right: 0.3rem;
+    
+            color: $text-color-on-dark-bg;
+            background-color: $background-color;
+    
+            font-size: 1rem;
+            font-weight: 400;
+            width: max-content;
+            line-height: 1.5rem;
+        }
+    }
+}
+
+footer {
+    height: auto;
 }

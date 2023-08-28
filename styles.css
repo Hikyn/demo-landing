@@ -35,9 +35,24 @@ a.link--uppercase {
   text-transform: uppercase;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  height: 100%;
+}
+
+.block--fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  height: 100vh;
+}
+
 header {
   display: flex;
   padding: 1.5rem;
+  flex: 0 1 auto;
 }
 header .block--left {
   flex: 1 0 0;
@@ -61,6 +76,63 @@ header .block--right .info {
 header a:hover {
   color: #FFB2C7;
   transition: 0.1s all ease-in;
+}
+
+main {
+  background-image: url("images/greece.jpg");
+  background-blend-mode: screen, normal;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 5rem;
+  margin-left: 3rem;
+  height: inherit;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main h1.title {
+  margin: 4rem 0;
+  color: black;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -0.12rem;
+  line-height: 6rem;
+}
+main h1.title .top,
+main h1.title .bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+main h1.title .top .title--cubic,
+main h1.title .bottom .title--cubic {
+  padding: 0 1rem;
+  background-color: white;
+}
+main h1.title .top .title--round,
+main h1.title .bottom .title--round {
+  padding: 0 2.5rem;
+  background-color: white;
+  border-radius: 3.75rem;
+}
+main .block--description {
+  margin: 1rem 0rem;
+}
+main .block--description h2.description {
+  margin: 0;
+  padding-right: 0.3rem;
+  color: #F0F7FF;
+  background-color: #001A33;
+  font-size: 1rem;
+  font-weight: 400;
+  width: max-content;
+  line-height: 1.5rem;
+}
+
+footer {
+  height: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
