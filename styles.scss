@@ -1,8 +1,12 @@
 $background-color: #001A33;
+$background-color-transparent: #001a3399;
 $button-color: #FFB2C7;
 $button-color-hover: #d7879d;
 $text-color-on-dark-bg: #F0F7FF;
 
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
 
 html {
     background: $background-color;
@@ -27,21 +31,6 @@ html {
     box-sizing: inherit;
 }
 
-a {
-    color: $text-color-on-dark-bg;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 400;
-    text-decoration: none;
-
-    &:visited {
-        text-decoration: none;
-    }
-    &.link--uppercase {
-        text-transform: uppercase;
-    }
-}
-
 body {
     align-content: space-between;
     display: flex;
@@ -58,9 +47,38 @@ body {
 }
 
 header {
-    display: flex;
     flex: 0 1 auto;
     padding: 1.5rem;
+    gap: 1rem;
+
+    @media (min-width: $mediaBp1Width) {
+        display: flex;
+        flex-direction: row;
+      }
+    
+    @media (max-width: $mediaBp1Width) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        color: $text-color-on-dark-bg;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        text-decoration: none;
+        @media (max-width: $mediaBp1Width) {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+    
+        &:visited {
+            text-decoration: none;
+        }
+        &.link--uppercase {
+            text-transform: uppercase;
+        }
+    }
 
     .block--left {
         flex: 1 0 0;
@@ -71,11 +89,21 @@ header {
         display: flex;
         flex: 1 0 0;
         justify-content: space-between;
+        gap: 1rem;
+
+        @media (max-width: $mediaBp1Width) {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
 
         .menu,
         .info {
             display: flex;
             gap: 1.5rem;
+            @media (max-width: $mediaBp1Width) {
+                gap: 0.3rem;
+            }
             
         }
 
@@ -118,6 +146,12 @@ main {
     justify-content: center;
     margin-left: 3rem;
     transition-timing-function: ease;
+    @media (max-width: $mediaBp1Width) {
+        background-position: 0rem;
+        border-radius: 1rem;
+        margin-left: 0rem;
+        align-items: center;
+    }
 
     button {
         align-items: center;
@@ -147,6 +181,19 @@ main {
     h1.title {
         animation-duration: 7s;
         animation-name: slidein-left;
+
+        @media (max-width: $mediaBp1Width) {
+            animation-duration: 0s;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: -0.12rem;
+            line-height: 2rem;
+            margin: 1rem 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
         @keyframes slidein-left {
             from {
             margin-left: 30%;
@@ -169,7 +216,9 @@ main {
             flex-direction: row;
             gap: 1.25rem;
             margin-bottom: 0.5rem;
-
+            @media (max-width: $mediaBp1Width) {
+                gap: 0.3rem;
+            }
             .title--cubic,
             .title--round {
                 background-color: white;
@@ -187,6 +236,14 @@ main {
     }
     .block--description {
         margin: 1rem 0rem;
+        @media (max-width: $mediaBp1Width) {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 1rem;
+            margin-top: 6rem;
+        }
 
         h2.description {
             background-color: $background-color;
@@ -197,6 +254,12 @@ main {
             margin: 0;
             padding-right: 0.3rem;
             width: max-content;
+            @media (max-width: $mediaBp1Width) {
+                display: inline;
+                width: 100%;
+                padding: 0.1rem 0.1rem;
+                background-color: $background-color;
+            }
         }
     }
 }
@@ -207,6 +270,9 @@ footer {
     height: auto;
     justify-content: space-around;
     margin: 3rem;
+    @media (max-width: $mediaBp1Width) {
+        margin: 2rem;
+    }
 
     .footer--top {
         color: $text-color-on-dark-bg;
@@ -217,6 +283,11 @@ footer {
         letter-spacing: -0.08rem;
         line-height: 4rem;
         margin-right: 50vw;
+        @media (max-width: $mediaBp1Width) {
+            margin: 2rem 0;
+            font-size: 3rem;
+            line-height: 3rem;
+        }
     }
 
     .footer--bottom {
@@ -224,6 +295,9 @@ footer {
         display: flex;
         gap: 0.75rem;
         height: 7rem;
+        @media (max-width: $mediaBp1Width) {
+            flex-direction: column;
+        }
 
         button {
             align-items: flex-end;
@@ -237,6 +311,9 @@ footer {
             padding: 0;
             text-decoration: none;
             transition: 0.1s all ease-in;
+            @media (max-width: $mediaBp1Width) {
+                gap: 0rem;
+            }
 
             &:hover {
                 border-radius: 1rem;
@@ -257,6 +334,9 @@ footer {
                 font-weight: 400;
                 line-height: 2rem;
                 padding: 0.75rem 5rem 0.75rem 0.75rem;
+                @media (max-width: $mediaBp1Width) {
+                    height: 6rem;
+                }
             }
 
             .flex-end {
@@ -268,7 +348,9 @@ footer {
                 justify-content: flex-end;
                 padding: 0.75rem;
                 transition: 0.1s all ease-in;
-
+                @media (max-width: $mediaBp1Width) {
+                    flex: 0;
+                }
                 svg {
                     transition: 0.1s all ease-in;
                 }

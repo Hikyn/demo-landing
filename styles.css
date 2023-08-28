@@ -21,20 +21,6 @@ html hr {
   box-sizing: inherit;
 }
 
-a {
-  color: #F0F7FF;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: none;
-}
-a:visited {
-  text-decoration: none;
-}
-a.link--uppercase {
-  text-transform: uppercase;
-}
-
 body {
   align-content: space-between;
   display: flex;
@@ -51,9 +37,40 @@ body {
 }
 
 header {
-  display: flex;
   flex: 0 1 auto;
   padding: 1.5rem;
+  gap: 1rem;
+}
+@media (min-width: 960px) {
+  header {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (max-width: 960px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+}
+header a {
+  color: #F0F7FF;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+@media (max-width: 960px) {
+  header a {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+header a:visited {
+  text-decoration: none;
+}
+header a.link--uppercase {
+  text-transform: uppercase;
 }
 header .block--left {
   flex: 1 0 0;
@@ -63,11 +80,25 @@ header .block--right {
   display: flex;
   flex: 1 0 0;
   justify-content: space-between;
+  gap: 1rem;
+}
+@media (max-width: 960px) {
+  header .block--right {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
 }
 header .block--right .menu,
 header .block--right .info {
   display: flex;
   gap: 1.5rem;
+}
+@media (max-width: 960px) {
+  header .block--right .menu,
+  header .block--right .info {
+    gap: 0.3rem;
+  }
 }
 header .block--right .menu {
   justify-content: flex-start;
@@ -104,6 +135,14 @@ main {
     margin-top: 0%;
   }
 }
+@media (max-width: 960px) {
+  main {
+    background-position: 0rem;
+    border-radius: 1rem;
+    margin-left: 0rem;
+    align-items: center;
+  }
+}
 main button {
   align-items: center;
   background-color: #FFB2C7;
@@ -136,6 +175,20 @@ main h1.title {
   line-height: 6rem;
   margin: 4rem 0;
 }
+@media (max-width: 960px) {
+  main h1.title {
+    animation-duration: 0s;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.12rem;
+    line-height: 2rem;
+    margin: 1rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 @keyframes slidein-left {
   from {
     margin-left: 30%;
@@ -150,6 +203,12 @@ main h1.title .bottom {
   flex-direction: row;
   gap: 1.25rem;
   margin-bottom: 0.5rem;
+}
+@media (max-width: 960px) {
+  main h1.title .top,
+  main h1.title .bottom {
+    gap: 0.3rem;
+  }
 }
 main h1.title .top .title--cubic,
 main h1.title .top .title--round,
@@ -169,6 +228,16 @@ main h1.title .bottom .title--round {
 main .block--description {
   margin: 1rem 0rem;
 }
+@media (max-width: 960px) {
+  main .block--description {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin-top: 6rem;
+  }
+}
 main .block--description h2.description {
   background-color: #001A33;
   color: #F0F7FF;
@@ -179,6 +248,14 @@ main .block--description h2.description {
   padding-right: 0.3rem;
   width: max-content;
 }
+@media (max-width: 960px) {
+  main .block--description h2.description {
+    display: inline;
+    width: 100%;
+    padding: 0.1rem 0.1rem;
+    background-color: #001A33;
+  }
+}
 
 footer {
   display: flex;
@@ -186,6 +263,11 @@ footer {
   height: auto;
   justify-content: space-around;
   margin: 3rem;
+}
+@media (max-width: 960px) {
+  footer {
+    margin: 2rem;
+  }
 }
 footer .footer--top {
   color: #F0F7FF;
@@ -197,11 +279,23 @@ footer .footer--top {
   line-height: 4rem;
   margin-right: 50vw;
 }
+@media (max-width: 960px) {
+  footer .footer--top {
+    margin: 2rem 0;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
 footer .footer--bottom {
   align-self: stretch;
   display: flex;
   gap: 0.75rem;
   height: 7rem;
+}
+@media (max-width: 960px) {
+  footer .footer--bottom {
+    flex-direction: column;
+  }
 }
 footer .footer--bottom button {
   align-items: flex-end;
@@ -215,6 +309,11 @@ footer .footer--bottom button {
   padding: 0;
   text-decoration: none;
   transition: 0.1s all ease-in;
+}
+@media (max-width: 960px) {
+  footer .footer--bottom button {
+    gap: 0rem;
+  }
 }
 footer .footer--bottom button:hover {
   border-radius: 1rem;
@@ -234,6 +333,11 @@ footer .footer--bottom button div {
   line-height: 2rem;
   padding: 0.75rem 5rem 0.75rem 0.75rem;
 }
+@media (max-width: 960px) {
+  footer .footer--bottom button div {
+    height: 6rem;
+  }
+}
 footer .footer--bottom button .flex-end {
   background-color: #001A33;
   border-radius: 0.75rem 0rem 0rem 0rem;
@@ -243,6 +347,11 @@ footer .footer--bottom button .flex-end {
   justify-content: flex-end;
   padding: 0.75rem;
   transition: 0.1s all ease-in;
+}
+@media (max-width: 960px) {
+  footer .footer--bottom button .flex-end {
+    flex: 0;
+  }
 }
 footer .footer--bottom button .flex-end svg {
   transition: 0.1s all ease-in;
