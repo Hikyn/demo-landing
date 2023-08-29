@@ -13,12 +13,14 @@ html {
     font-family: Helvetica, sans-serif;
     min-height: 100vh;
     scroll-behavior: smooth;
+
     ul,
     li {
         list-style-type: none;
         margin-left: 0;
         padding-left: 0;
     }
+
     hr {
         border-width: 0px;
         margin: 0em;
@@ -43,22 +45,24 @@ body {
     align-content: space-between;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
 }
 
-header {
+header nav {
     flex: 0 1 auto;
-    padding: 1.5rem;
     gap: 1rem;
+    padding: 1.5rem;
 
     @media (min-width: $mediaBp1Width) {
         display: flex;
         flex-direction: row;
-      }
+    }
     
     @media (max-width: $mediaBp1Width) {
         display: flex;
         flex-direction: column;
+        padding: 0.5rem;
     }
 
     a {
@@ -75,6 +79,7 @@ header {
         &:visited {
             text-decoration: none;
         }
+
         &.link--uppercase {
             text-transform: uppercase;
         }
@@ -88,8 +93,8 @@ header {
         align-items: flex-start;
         display: flex;
         flex: 1 0 0;
-        justify-content: space-between;
         gap: 1rem;
+        justify-content: space-between;
 
         @media (max-width: $mediaBp1Width) {
             align-items: flex-start;
@@ -101,10 +106,10 @@ header {
         .info {
             display: flex;
             gap: 1.5rem;
+
             @media (max-width: $mediaBp1Width) {
                 gap: 0.3rem;
             }
-            
         }
 
         .menu {
@@ -125,6 +130,7 @@ header {
 main {
     animation-duration: 2s;
     animation-name: slidein;
+
     @keyframes slidein {
         from {
           margin-top: 60%;
@@ -133,8 +139,10 @@ main {
         to {
           margin-top: 0%;
         }
-      }
-    background-blend-mode: screen, normal;
+    }
+    /* Blending two images for some reason disables background-position. 
+    It works, but in a different way - background now stays in place and shifts 
+    instead of physically moving to create empty space*/
     background-image: url('images/greece.png');
     background-position: 5rem;
     background-repeat: no-repeat;
@@ -146,11 +154,12 @@ main {
     justify-content: center;
     margin-left: 3rem;
     transition-timing-function: ease;
+
     @media (max-width: $mediaBp1Width) {
+        align-items: center;
         background-position: 0rem;
         border-radius: 1rem;
         margin-left: 0rem;
-        align-items: center;
     }
 
     button {
@@ -181,19 +190,26 @@ main {
     h1.title {
         animation-duration: 7s;
         animation-name: slidein-left;
+        color: black;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: -0.12rem;
+        line-height: 6rem;
+        margin: Min(4rem, 5vh) 0;
 
         @media (max-width: $mediaBp1Width) {
+            align-items: center;
             animation-duration: 0s;
+            display: flex;
+            flex-direction: column;
             font-size: 2rem;
             font-weight: 400;
+            justify-content: center;
             letter-spacing: -0.12rem;
             line-height: 2rem;
             margin: 1rem 0;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
         }
+
         @keyframes slidein-left {
             from {
             margin-left: 30%;
@@ -203,12 +219,6 @@ main {
             margin-left: 0%;
             }
         }
-        color: black;
-        font-size: 6rem;
-        font-weight: 400;
-        letter-spacing: -0.12rem;
-        line-height: 6rem;
-        margin: 4rem 0;
 
         .top,
         .bottom {
@@ -216,9 +226,11 @@ main {
             flex-direction: row;
             gap: 1.25rem;
             margin-bottom: 0.5rem;
+
             @media (max-width: $mediaBp1Width) {
                 gap: 0.3rem;
             }
+
             .title--cubic,
             .title--round {
                 background-color: white;
@@ -234,31 +246,33 @@ main {
             }
         }
     }
-    .block--description {
+    h2.block--description {
         margin: 1rem 0rem;
+
         @media (max-width: $mediaBp1Width) {
             align-items: center;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
             border-radius: 1rem;
-            margin-top: 6rem;
+            display: inline;
+            line-height: 1rem;
+            margin: Min(6rem, 5vh) 0rem;
         }
 
-        h2.description {
+        .description {
             background-color: $background-color;
             color: $text-color-on-dark-bg;
+            display:block;
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.5rem;
             margin: 0;
             padding-right: 0.3rem;
             width: max-content;
+            
             @media (max-width: $mediaBp1Width) {
-                display: inline;
-                width: 100%;
-                padding: 0.1rem 0.1rem;
                 background-color: $background-color;
+                display: inline;
+                padding: 0.1rem 0.1rem;
+                width: 100%;
             }
         }
     }
@@ -270,6 +284,7 @@ footer {
     height: auto;
     justify-content: space-around;
     margin: 3rem;
+
     @media (max-width: $mediaBp1Width) {
         margin: 2rem;
     }
@@ -283,10 +298,23 @@ footer {
         letter-spacing: -0.08rem;
         line-height: 4rem;
         margin-right: 50vw;
+
         @media (max-width: $mediaBp1Width) {
-            margin: 2rem 0;
             font-size: 3rem;
             line-height: 3rem;
+            margin: 2rem 0;
+        }
+
+        h1 {
+            font-size:4rem;
+            font-weight: 400;
+            line-height: 4rem;
+            margin: 0;
+
+            @media (max-width: $mediaBp1Width) {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
         }
     }
 
@@ -295,11 +323,12 @@ footer {
         display: flex;
         gap: 0.75rem;
         height: 7rem;
+
         @media (max-width: $mediaBp1Width) {
             flex-direction: column;
         }
 
-        button {
+        a {
             align-items: flex-end;
             background-color: $button-color;
             border: none;
@@ -311,13 +340,14 @@ footer {
             padding: 0;
             text-decoration: none;
             transition: 0.1s all ease-in;
+
             @media (max-width: $mediaBp1Width) {
                 gap: 0rem;
             }
 
             &:hover {
-                border-radius: 1rem;
                 background-color: $button-color-hover;
+                border-radius: 1rem;
             }
 
             &:hover > .flex-end {
@@ -327,13 +357,14 @@ footer {
                 }
             }
 
-            div {
+            span {
                 color: black;
                 font-size: 1.5rem;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 2rem;
                 padding: 0.75rem 5rem 0.75rem 0.75rem;
+
                 @media (max-width: $mediaBp1Width) {
                     height: 6rem;
                 }
@@ -348,9 +379,11 @@ footer {
                 justify-content: flex-end;
                 padding: 0.75rem;
                 transition: 0.1s all ease-in;
+
                 @media (max-width: $mediaBp1Width) {
                     flex: 0;
                 }
+
                 svg {
                     transition: 0.1s all ease-in;
                 }
