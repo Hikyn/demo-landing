@@ -14,21 +14,23 @@
     <body>
         <div class="block--fullscreen">
             <header>
-                <div class="block--left">
-                    <a href="#" target="_self">#LIVEINGREECE</a>
-                </div>
-                <div class="block--right">
-                    <div class="menu">
-                        <a href="#" target="_self">For</a>
-                        <a href="#" class="link--uppercase" target="_self">Talents</a>
-                        <a href="#" class="link--uppercase" target="_self">Enterpreneurs</a>
-                        <a href="#" class="link--uppercase" target="_self">Investors</a>
+                <nav role="menubar">
+                    <div class="block--left">
+                        <a role="menuitem" href="#" target="_self">#LIVEINGREECE</a>
                     </div>
-                    <div class="info">
-                        <a href="#" target="_self">Initiatives</a>
-                        <a href="#" target="_self">Q&A</a>
+                    <div class="block--right">
+                        <div class="menu">
+                            <a role="menuitem" href="#" target="_self">For</a>
+                            <a role="menuitem" href="#" class="link--uppercase" target="_self">Talents</a>
+                            <a role="menuitem" href="#" class="link--uppercase" target="_self">Enterpreneurs</a>
+                            <a role="menuitem" href="#" class="link--uppercase" target="_self">Investors</a>
+                        </div>
+                        <div class="info">
+                            <a role="menuitem" href="#" target="_self">Initiatives</a>
+                            <a role="menuitem" href="#" target="_self">Q&A</a>
+                        </div>
                     </div>
-                </div>
+                </nav>
             </header>
             <main>
                 <h1 class="title">
@@ -63,32 +65,30 @@
                 <span>Discover innovation opportunities</span>
             </div>
             <div class="footer--bottom">
-                <button action="#" method="get" target="_blank">
-                    <!-- Better to use div instead of a button to wrap all of that and avoid w3c validation errors,
-                    but it will require JS event handler-->
-                    <div>Talents</div>
+                <a href="#" target="_self">
+                    <span>Talents</span>
                     <div class="flex-end">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.875 5.625L15.5344 6.93094L22.6406 14.0625H3.75V15.9375H22.6406L15.5344 23.0372L16.875 24.375L26.25 15L16.875 5.625Z" fill="#FFB3C7"/>
                         </svg>
                     </div>
-                </button>
-                <button action="#" method="get" target="_blank">
-                    <div>Entrepreneurs</div>
+                </a>
+                <a href="#" target="_self">
+                    <span>Entrepreneurs</span>
                     <div class="flex-end">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.875 5.625L15.5344 6.93094L22.6406 14.0625H3.75V15.9375H22.6406L15.5344 23.0372L16.875 24.375L26.25 15L16.875 5.625Z" fill="#FFB3C7"/>
                         </svg>
                     </div>
-                </button>
-                <button action="#" method="get" target="_blank">
-                    <div>Investors</div>
+                </a>
+                <a href="#" target="_self">
+                    <span>Investors</span>
                     <div class="flex-end">
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.875 5.625L15.5344 6.93094L22.6406 14.0625H3.75V15.9375H22.6406L15.5344 23.0372L16.875 24.375L26.25 15L16.875 5.625Z" fill="#FFB3C7"/>
                         </svg>
                     </div>
-                </button>
+                </a>
             </div>
         </footer>
     </body>
