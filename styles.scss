@@ -43,7 +43,8 @@ body {
     align-content: space-between;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 header {
@@ -59,6 +60,7 @@ header {
     @media (max-width: $mediaBp1Width) {
         display: flex;
         flex-direction: column;
+        padding: 0.5rem;
     }
 
     a {
@@ -134,7 +136,9 @@ main {
           margin-top: 0%;
         }
       }
-    background-blend-mode: screen, normal;
+    /* Blending two images for some reason disables background-position. 
+    It works, but in a different way - background now stays in place and shifts 
+    instead of physically moving to create empty space*/
     background-image: url('images/greece.png');
     background-position: 5rem;
     background-repeat: no-repeat;
@@ -181,6 +185,12 @@ main {
     h1.title {
         animation-duration: 7s;
         animation-name: slidein-left;
+        color: black;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: -0.12rem;
+        line-height: 6rem;
+        margin: Min(4rem, 5vh) 0;
 
         @media (max-width: $mediaBp1Width) {
             animation-duration: 0s;
@@ -203,12 +213,7 @@ main {
             margin-left: 0%;
             }
         }
-        color: black;
-        font-size: 6rem;
-        font-weight: 400;
-        letter-spacing: -0.12rem;
-        line-height: 6rem;
-        margin: 4rem 0;
+        
 
         .top,
         .bottom {
@@ -234,18 +239,18 @@ main {
             }
         }
     }
-    .block--description {
+    h2.block--description {
         margin: 1rem 0rem;
         @media (max-width: $mediaBp1Width) {
             align-items: center;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+            display: inline;
+            line-height: 1rem;
             border-radius: 1rem;
-            margin-top: 6rem;
+            margin: Min(6rem, 5vh) 0rem;
         }
 
-        h2.description {
+        .description {
+            display:block;
             background-color: $background-color;
             color: $text-color-on-dark-bg;
             font-size: 1rem;
