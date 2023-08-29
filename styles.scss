@@ -293,6 +293,17 @@ footer {
             font-size: 3rem;
             line-height: 3rem;
         }
+
+        h1 {
+            font-size:4rem;
+            line-height: 4rem;
+            font-weight: 400;
+            margin: 0;
+            @media (max-width: $mediaBp1Width) {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+        }
     }
 
     .footer--bottom {

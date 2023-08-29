@@ -290,6 +290,18 @@ footer .footer--top {
     line-height: 3rem;
   }
 }
+footer .footer--top h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: 400;
+  margin: 0;
+}
+@media (max-width: 960px) {
+  footer .footer--top h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
 footer .footer--bottom {
   align-self: stretch;
   display: flex;
